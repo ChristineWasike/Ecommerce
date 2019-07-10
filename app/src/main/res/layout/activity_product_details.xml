@@ -7,14 +7,34 @@
         android:layout_height="match_parent"
         tools:context=".ProductDetails">
 
-
+    <ImageView
+            android:id="@+id/productDetailsImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/appleicecream"
+            android:layout_centerHorizontal="true"/>
     <TextView
             android:id="@+id/productDetailsTitle"
+            android:layout_below="@+id/productDetailsImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/product_details"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"
-            android:padding="16dp"/>
+            android:padding="16dp"
+            app:fontFamily="@font/comfortaa"/>
+
+    <Button
+            android:id="@+id/availabilityButton"
+            android:layout_below="@+id/productDetailsTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/available"
+            android:fontFamily="@font/comfortaa"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:background="@color/colorPrimary" tools:targetApi="jelly_bean"/>
 
 </RelativeLayout>
