@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ecommerce</string>
+    <string name="fresh_apple_fragrance">Fresh Apple Fragrance</string>
+    <string name="product_details">Product Details</string>
 </resources>
