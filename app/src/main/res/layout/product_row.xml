@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fresh_apple_fragrance"
+            android:fontFamily="@font/comfortaa"
             android:layout_marginTop="5dp"/>
 
     <TextView
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/productTitle"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+    android:fontFamily="@font/comfortaa"/>
 
 </RelativeLayout>
