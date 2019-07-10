@@ -2,12 +2,14 @@ package com.spongey.ecommerce
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.spongey.ecommerce.model.Product
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val apiKey = BuildConfig.Api_Key
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,9 +20,11 @@ class MainActivity : AppCompatActivity() {
         for (i in 1..100) {
             products.add(Product("Organic Apple  #$i", "http://www.pngmart.com/files/5/Red-Apple-PNG-Photos.png", 200.00))
         }
-            recyclerView.apply {
-                layoutManager = GridLayoutManager(this@MainActivity, 2)
-                adapter = ProductsAdapter(products)
-            }
+        recyclerView.apply {
+            layoutManager = GridLayoutManager(this@MainActivity, 2)
+            adapter = ProductsAdapter(products)
+        }
+
+        Toast.makeText(this, apiKey, Toast.LENGTH_SHORT).show()
     }
 }
