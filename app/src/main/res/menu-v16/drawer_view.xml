@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
     <item
             android:id="@+id/apples"
             android:icon="@drawable/ic_menu_gallery"
@@ -11,4 +12,5 @@
             android:title="@string/apples"
             android:fontFamily ="@font/comfortaa"
             app:showAsAction="never"/>
+    </group>
 </menu>
