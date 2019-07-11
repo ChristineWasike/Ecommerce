@@ -1,4 +1,4 @@
-package com.spongey.ecommerce
+package com.spongey.ecommerce.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.spongey.ecommerce.ProductsAdapter.*
-import com.spongey.ecommerce.model.Product
+import com.spongey.ecommerce.R
+import com.spongey.ecommerce.adapters.ProductsAdapter.*
+import com.spongey.ecommerce.models.Product
 import com.spongey.ecommerce.ui.ProductDetails
 import com.squareup.picasso.Picasso
 
