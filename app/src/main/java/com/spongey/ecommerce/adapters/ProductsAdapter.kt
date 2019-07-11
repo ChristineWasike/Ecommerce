@@ -13,12 +13,12 @@ import com.spongey.ecommerce.models.Product
 import com.spongey.ecommerce.ui.ProductDetails
 import com.squareup.picasso.Picasso
 
-class ProductsAdapter(private val products: ArrayList<Product>) : RecyclerView.Adapter<ViewHolder>() {
+class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products[position]
-        Picasso.get().load(product.photoUrl).into(holder.image)
-        holder.title.text = product.title
+        Picasso.get().load(product.image).into(holder.image)
+        holder.title.text = product.name
         holder.price.text = product.price.toString()
     }
 
@@ -27,7 +27,7 @@ class ProductsAdapter(private val products: ArrayList<Product>) : RecyclerView.A
         val holder = ViewHolder(view)
         view.setOnClickListener {
             val intent = Intent(parent.context, ProductDetails::class.java)
-            intent.putExtra("title", products[holder.adapterPosition].title)
+            intent.putExtra("title", products[holder.adapterPosition].name)
             parent.context.startActivity(intent)
         }
         return holder
