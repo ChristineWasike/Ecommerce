@@ -1,0 +1,55 @@
+{
+  "fruits": [
+    {
+      "name": "Apple",
+      "image": "http://www.pngmart.com/files/5/Red-Apple-PNG-Photos.png",
+      "price": 35
+    },
+    {
+      "name": "Banana",
+      "image": "http://www.pngmart.com/files/1/Banana-PNG.png",
+      "price": 12
+    },
+    {
+      "name": "Grapes",
+      "image": "http://www.pngmart.com/files/1/Red-Grapes-PNG.png",
+      "weight": 0.1,
+      "price": 45
+    },
+    {
+      "name": "Pineapple",
+      "image": "http://www.pngmart.com/files/8/Pineapple-PNG-Transparent-Photo.png",
+      "price": 200
+    },
+    {
+      "name": "Avocado",
+      "image": "http://www.pngmart.com/files/7/Half-Avocado-PNG-Transparent-Image.png",
+      "price": 50
+    },
+    {
+      "name": "Coconut",
+      "image": "http://www.pngmart.com/files/8/Coconut-PNG-File-Download-Free.png",
+      "price": 80
+    },
+    {
+      "name": "Orange",
+      "image": "http://www.pngmart.com/files/7/Half-Orange-PNG-Pic.png",
+      "price": 30
+    },
+    {
+      "name": "Mango",
+      "image": "http://www.pngmart.com/files/8/Mango-PNG-File-Download-Free.png",
+      "price": 25
+    },
+    {
+      "name": "Watermelon",
+      "image": "http://www.pngmart.com/files/8/Watermelon-PNG-File-Download-Free.png",
+      "price": 150
+    },
+    {
+      "name": "Papaya",
+      "image": "http://www.pngmart.com/files/3/Papaya-PNG-File.png",
+      "price": 60
+    }
+  ]
+}
