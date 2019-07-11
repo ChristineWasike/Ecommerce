@@ -16,6 +16,7 @@ import com.spongey.ecommerce.ui.fragments.MainFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.navigation_drawer.*
+import java.io.InputStream
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,21 +39,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
 
-        val products = arrayListOf<Product>()
-
-        for (i in 1..100) {
-            products.add(
-                Product(
-                    "Organic Apple  #$i",
-                    "http://www.pngmart.com/files/5/Red-Apple-PNG-Photos.png",
-                    200.00
-                )
-            )
-        }
-        recyclerView.apply {
-            layoutManager = GridLayoutManager(this@MainActivity, 2)
-            adapter = ProductsAdapter(products)
-        }
 
     }
 
@@ -69,10 +55,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-//            R.id.actionApples -> {
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.frameLayout, ApplesFragment()).commit()
-//            }
+            R.id.actionHome -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayout, MainFragment()).commit()
+            }
+
+            R.id.actionApples -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayout, ApplesFragment()).commit()
+            }
 
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
