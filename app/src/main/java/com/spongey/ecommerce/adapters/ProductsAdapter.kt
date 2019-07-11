@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.spongey.ecommerce.ProductsAdapter.*
 import com.spongey.ecommerce.model.Product
+import com.spongey.ecommerce.ui.ProductDetails
 import com.squareup.picasso.Picasso
 
 class ProductsAdapter(private val products: ArrayList<Product>) : RecyclerView.Adapter<ViewHolder>() {
