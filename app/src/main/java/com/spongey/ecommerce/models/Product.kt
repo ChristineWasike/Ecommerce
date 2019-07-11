@@ -1,4 +1,4 @@
-package com.spongey.ecommerce.model
+package com.spongey.ecommerce.models
 
 
 data class Product(
