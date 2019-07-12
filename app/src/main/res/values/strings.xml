@@ -23,4 +23,9 @@
     <string name="get_your_apples_today">Get your apples today</string>
     <string name="free_shipping">FREE SHIPPING</string>
     <string name="welcome_home">Welcome Home</string>
+    <string name="price">Ksh.00</string>
+    <string name="category_dummy">Category Dummy</string>
+    <string name="navigation_header">Navigation header</string>
+    <string name="spongey_s_e_commerce">Spongey\'s E-commerce</string>
+    <string name="spongey_ecommerce_spongey_com">spongey.ecommerce@spongey.com</string>
 </resources>
