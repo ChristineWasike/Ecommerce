@@ -2,7 +2,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
+        xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -11,11 +11,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+    <LinearLayout
+            android:id="@+id/searchField"
+            android:layout_below="@id/categoriesRecyclerView"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <EditText
+                android:id="@+id/searchProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_product"
+                android:inputType="text"
+                android:autofillHints="auto"
+                tools:targetApi="o"/>
+
+        <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"/>
+
+        <Button
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"/>
+    </LinearLayout>
+
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/categoriesRecyclerView"/>
+            android:layout_below="@+id/searchField"/>
 
     <ProgressBar
             style="?android:attr/progressBarStyle"
