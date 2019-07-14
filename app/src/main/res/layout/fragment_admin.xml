@@ -1,25 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+        xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <TextView
-            android:id="@+id/appleText"
+            android:id="@+id/adminText"
             android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/get_your_apples_today"
+            android:text="@string/admin_panel"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"/>
 
+    <View
+            android:id="@+id/view1"
+            android:layout_below="@+id/adminText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"/>
+
+    <EditText
+            android:id="@+id/inputTitle"
+            android:layout_below="@+id/view1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:autofillHints="auto"
+            tools:targetApi="o"/>
+
+    <View
+            android:id="@+id/view2"
+            android:layout_below="@+id/inputTitle"
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+
     <Button
-            android:id="@+id/appleButton"
-            android:layout_below="@+id/appleText"
+            android:id="@+id/addProduct"
+            android:layout_below="@+id/view2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/free_shipping"
+            android:text="@string/add_product"
             android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
