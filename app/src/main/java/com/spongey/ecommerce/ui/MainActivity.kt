@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             ).build()
 
             //caching the products into the database
-            db.productDao().insertAll(CachedProduct(null, "Guava", 25.00))
+            db.productDao().insertAll(CachedProduct(null, "Guava Fruit", 25.00))
 
             val products = db.productDao().getAll()
             uiThread {
