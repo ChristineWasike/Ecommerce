@@ -21,20 +21,29 @@
             android:text="@string/product_details"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"
-            android:padding="16dp"
-            app:fontFamily="@font/comfortaa"/>
+            android:padding="16dp"/>
+
+    <TextView
+            android:id="@+id/productDetailsPrice"
+            android:layout_below="@+id/productDetailsTitle"
+            android:layout_centerHorizontal="true"
+            android:text="@string/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:targetApi="jelly_bean"/>
 
     <Button
             android:id="@+id/availabilityButton"
-            android:layout_below="@+id/productDetailsTitle"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/productDetailsPrice"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/available"
-            android:fontFamily="@font/comfortaa"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:padding="15dp"
-            android:background="@color/colorPrimary" tools:targetApi="jelly_bean"/>
+            android:background="@color/colorPrimary"
+            tools:targetApi="jelly_bean"/>
 
 </RelativeLayout>
