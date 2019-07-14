@@ -25,5 +25,11 @@
                 android:orderInCategory="100"
                 android:title="@string/bananas"
                 app:showAsAction="never"/>
+        <item
+                android:id="@+id/actionAdmin"
+                android:icon="@drawable/ic_playlist_add_black_24dp"
+                android:orderInCategory="100"
+                android:title="@string/admin"
+                app:showAsAction="never"/>
     </group>
 </menu>
