@@ -28,4 +28,8 @@
     <string name="navigation_header">Navigation header</string>
     <string name="spongey_s_e_commerce">Spongey\'s E-commerce</string>
     <string name="spongey_ecommerce_spongey_com">spongey.ecommerce@spongey.com</string>
+    <string name="admin">Admin</string>
+    <string name="add_product">Add Product</string>
+    <string name="name">Name</string>
+    <string name="admin_panel">Admin Panel</string>
 </resources>
