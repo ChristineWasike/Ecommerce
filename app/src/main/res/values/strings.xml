@@ -34,4 +34,5 @@
     <string name="admin_panel">Admin Panel</string>
     <string name="search_product">Search product ...</string>
     <string name="search">Search</string>
+    <string name="cart">Cart</string>
 </resources>
