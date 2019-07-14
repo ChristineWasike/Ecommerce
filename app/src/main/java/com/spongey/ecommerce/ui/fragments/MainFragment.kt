@@ -29,38 +29,7 @@ import java.util.ArrayList
 class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_main, container, false)
-        var fruits: List<Product>
 
-
-        doAsync {
-            //creating an instance of the database
-            val db = Room.databaseBuilder(
-                activity!!.applicationContext, AppDatabase::class.java, "database-name"
-            ).build()
-
-            //caching the products into the database
-
-            //retrieve products from database
-            val cachedProducts = db.productDao().getAll()
-
-            val products = cachedProducts.map {
-                Product(
-                    it.name,
-                    "https://pngimg.com/uploads/guava/guava_PNG15.png",
-                    it.price,
-                    true
-                )
-            }
-            uiThread {
-                root.recyclerView.apply {
-                    layoutManager = GridLayoutManager(activity, 2)
-                    adapter = ProductsAdapter(products)
-                    root.progressBar.visibility = View.GONE
-                    fruits = products
-                }
-            }
-
-        }
 
 //        val inputStream: InputStream = activity!!.assets.open("generated.json")
 //        val inputString = inputStream.bufferedReader().use { it.readText() }
@@ -85,5 +54,48 @@ class MainFragment : Fragment() {
 //        }
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var fruits: List<Product>
+
+        searchButton.setOnClickListener {
+            doAsync {
+                //creating an instance of the database
+                val db = Room.databaseBuilder(
+                    activity!!.applicationContext, AppDatabase::class.java, "database-name"
+                ).build()
+
+                //caching the products into the database
+
+                //searching for products from the database
+
+
+                //retrieve products from database
+                val cachedProducts = db.productDao().searchFor("%${searchProduct.text}%")
+
+                val products = cachedProducts.map {
+                    Product(
+                        it.name,
+                        "https://pngimg.com/uploads/guava/guava_PNG15.png",
+                        it.price,
+                        true
+                    )
+                }
+                uiThread {
+                    recyclerView.apply {
+                        layoutManager = GridLayoutManager(activity, 2)
+                        adapter = ProductsAdapter(products)
+
+                        fruits = products
+                    }
+                    progressBar.visibility = View.GONE
+                }
+
+            }
+        }
+
     }
 }
