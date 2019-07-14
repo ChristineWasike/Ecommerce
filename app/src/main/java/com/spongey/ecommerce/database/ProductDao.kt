@@ -9,6 +9,9 @@ interface ProductDao {
     @Query("SELECT * FROM cachedProduct")
     fun getAll(): List<CachedProduct>
 
+    @Query("SELECT * FROM cachedProduct WHERE name LIKE :term")
+    fun searchFor(term: String): List <CachedProduct>
+
    @Insert
    fun insertAll(vararg products: CachedProduct)
 }
