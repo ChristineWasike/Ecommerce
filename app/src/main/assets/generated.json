@@ -2,52 +2,86 @@
   {
     "name": "Apple",
     "image": "http://www.pngmart.com/files/5/Red-Apple-PNG-Photos.png",
-    "price": 35
+    "price": 35,
+    "isOnSale": true
   },
   {
     "name": "Banana",
     "image": "http://www.pngmart.com/files/1/Banana-PNG.png",
-    "price": 12
+    "price": 12,
+    "isOnSale": false
   },
   {
     "name": "Grapes",
     "image": "http://www.pngmart.com/files/1/Red-Grapes-PNG.png",
     "weight": 0.1,
-    "price": 45
+    "price": 45,
+    "isOnSale": true
   },
   {
     "name": "Pineapple",
     "image": "http://www.pngmart.com/files/8/Pineapple-PNG-Transparent-Photo.png",
-    "price": 200
+    "price": 200,
+    "isOnSale": false
   },
   {
     "name": "Avocado",
     "image": "http://www.pngmart.com/files/7/Half-Avocado-PNG-Transparent-Image.png",
-    "price": 50
+    "price": 40,
+    "isOnSale": false
   },
   {
     "name": "Coconut",
     "image": "http://www.pngmart.com/files/8/Coconut-PNG-File-Download-Free.png",
-    "price": 80
+    "price": 80,
+    "isOnSale": true
   },
   {
     "name": "Orange",
-    "image": "http://www.pngmart.com/files/7/Half-Orange-PNG-Pic.png",
-    "price": 30
+      "image": "http://www.pngmart.com/files/7/Half-Orange-PNG-Pic.png",
+    "price": 30,
+    "isOnSale": false
   },
   {
     "name": "Mango",
     "image": "http://www.pngmart.com/files/8/Mango-PNG-File-Download-Free.png",
-    "price": 25
+    "price": 25,
+    "isOnSale": true
   },
   {
     "name": "Watermelon",
     "image": "http://www.pngmart.com/files/8/Watermelon-PNG-File-Download-Free.png",
-    "price": 150
+    "price": 150,
+    "isOnSale": true
   },
   {
     "name": "Papaya",
     "image": "http://www.pngmart.com/files/3/Papaya-PNG-File.png",
-    "price": 60
+    "price": 10,
+    "isOnSale": true
+  },
+  {
+    "name": "Cherry",
+    "image": "http://www.pngmart.com/files/1/Cherry-Fruit-Transparent-PNG.png",
+    "price": 10,
+    "isOnSale": true
+  },
+  {
+    "name": "Pear",
+    "image": "http://www.pngmart.com/files/1/Pear-Fruit-PNG.png",
+    "price": 30,
+    "isOnSale": false
+  },
+  {
+    "name": "Kiwi",
+    "image": "http://www.pngmart.com/files/1/Kiwi-Fruit-PNG.png",
+    "price": 35,
+    "isOnSale": false
+  },
+  {
+    "name": "Blackberry",
+    "image": "http://www.pngmart.com/files/7/Blackberry-Fruit-PNG-File.png",
+    "price": 120,
+    "isOnSale": true
   }
 ]
