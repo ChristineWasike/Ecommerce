@@ -1,10 +1,14 @@
 package com.spongey.ecommerce.ui.fragments
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,9 +21,15 @@ import com.spongey.ecommerce.adapters.ProductsAdapter
 import com.spongey.ecommerce.database.AppDatabase
 import com.spongey.ecommerce.database.CachedProduct
 import com.spongey.ecommerce.models.Product
+import com.spongey.ecommerce.repos.ProductsRepository
+import com.spongey.ecommerce.ui.ProductDetails
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_main.view.categoriesRecyclerView
+import kotlinx.android.synthetic.main.product_row.view.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import java.io.InputStream
@@ -56,46 +66,41 @@ class MainFragment : Fragment() {
         return root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         var fruits: List<Product>
 
-        searchButton.setOnClickListener {
-            doAsync {
-                //creating an instance of the database
-                val db = Room.databaseBuilder(
-                    activity!!.applicationContext, AppDatabase::class.java, "database-name"
-                ).build()
+        val productsRepository = ProductsRepository().getAllProducts()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                d("Christine", "success:) ")
+                recyclerView.apply {
+                    layoutManager = GridLayoutManager(activity, 2)
 
-                //caching the products into the database
+                    adapter = ProductsAdapter(it) { extraName, extraPhoto, extraPrice, extraHolderImage ->
 
-                //searching for products from the database
-
-
-                //retrieve products from database
-                val cachedProducts = db.productDao().searchFor("%${searchProduct.text}%")
-
-                val products = cachedProducts.map {
-                    Product(
-                        it.name,
-                        "https://pngimg.com/uploads/guava/guava_PNG15.png",
-                        it.price,
-                        true
-                    )
-                }
-                uiThread {
-                    recyclerView.apply {
-                        layoutManager = GridLayoutManager(activity, 2)
-                        adapter = ProductsAdapter(products)
-
-                        fruits = products
+                        val intent = Intent(activity, ProductDetails::class.java)
+                        intent.putExtra("title", extraName)
+                        intent.putExtra("image", extraPhoto)
+                        intent.putExtra("price", extraPrice.toString())
+                        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            activity as AppCompatActivity,
+                            extraHolderImage,
+                            "photoToAnimate"
+                        )
+                        startActivity(intent, options.toBundle())
                     }
-                    progressBar.visibility = View.GONE
-                }
 
-            }
-        }
+
+                    fruits = it
+                }
+                progressBar.visibility = View.GONE
+            }, {
+                d("Christine", "error:( ${it.message}")
+            })
+
 
     }
 }
