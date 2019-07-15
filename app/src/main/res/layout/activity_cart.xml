@@ -1,7 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+            android:id="@+id/cartText"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_cart"
+            android:textSize="28sp"
+            android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_below="@id/cartText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    <EditText
+            android:id="@+id/creditCardInput"
+            android:layout_below="@id/cartRecyclerView"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/credit_card_number"
+            android:inputType="number"
+            android:autofillHints="auto"
+            tools:targetApi="o"/>
+
+    <View
+            android:id="@+id/cartView"
+            android:layout_below="@id/creditCardInput"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+    <EditText
+            android:id="@+id/addressInput"
+            android:layout_below="@id/cartView"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/address"
+            android:autofillHints="auto"
+            tools:targetApi="o"/>
+
+    <View
+            android:id="@+id/cartView1"
+            android:layout_below="@id/addressInput"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+    <LinearLayout
+            android:id="@+id/nameInput"
+            android:layout_below="@+id/cartView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+        <EditText
+                android:id="@+id/firstNameInput"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/first_name"
+                android:autofillHints="auto"
+                tools:targetApi="o"/>
+
+        <View
+                android:layout_width="20dp"
+                android:layout_height="0dp"/>
+
+        <EditText
+                android:id="@+id/lastNameInput"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/last_name"
+                android:autofillHints="auto"
+                tools:targetApi="o"/>
+    </LinearLayout>
+    <Button
+            android:id="@+id/cartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_order"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"/>
+</RelativeLayout>
