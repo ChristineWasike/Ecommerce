@@ -35,4 +35,11 @@
     <string name="search_product">Search product ...</string>
     <string name="search">Search</string>
     <string name="cart">Cart</string>
+    <string name="your_cart">Your Cart</string>
+    <string name="submit_order">Submit Order</string>
+    <string name="credit_card_number">Credit card number ...</string>
+    <string name="address">Address</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name ...</string>
+    <string name="todo">TODO</string>
 </resources>
