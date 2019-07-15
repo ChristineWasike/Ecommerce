@@ -1,8 +1,10 @@
 package com.spongey.ecommerce.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
@@ -13,6 +15,7 @@ import com.google.android.material.navigation.NavigationView
 import com.spongey.ecommerce.ui.fragments.ApplesFragment
 import com.spongey.ecommerce.adapters.ProductsAdapter
 import com.spongey.ecommerce.R
+import com.spongey.ecommerce.cart.CartActivity
 import com.spongey.ecommerce.database.AppDatabase
 import com.spongey.ecommerce.database.CachedProduct
 import com.spongey.ecommerce.database.ProductDao
@@ -95,8 +98,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
         }
+
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        d("Cart", "Going to cart")
+        startActivity(Intent(this, CartActivity::class.java))
+        return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
         return true
     }
 }
