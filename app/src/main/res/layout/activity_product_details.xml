@@ -12,7 +12,10 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:src="@drawable/appleicecream"
-            android:layout_centerHorizontal="true"/>
+            android:transitionName="photoToAnimate"
+            android:layout_centerHorizontal="true"
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo"/>
     <TextView
             android:id="@+id/productDetailsTitle"
             android:layout_below="@+id/productDetailsImage"
