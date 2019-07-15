@@ -9,6 +9,7 @@
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/comfortaa</item>
         //How to change the font of the title bar text!
         <item name="actionBarTabTextStyle">@font/comfortaa</item>
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
