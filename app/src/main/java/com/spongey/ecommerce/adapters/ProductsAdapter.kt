@@ -2,7 +2,6 @@ package com.spongey.ecommerce.adapters
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,10 @@ import com.spongey.ecommerce.ui.ProductDetails
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row.view.*
 
-class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapter<ViewHolder>() {
+class ProductsAdapter(
+    private val products: List<Product>,
+    private val onClickProduct: (name: String, image: String, price: Double, photoView: View) -> Unit
+) : RecyclerView.Adapter<ViewHolder>() {
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,24 +27,23 @@ class ProductsAdapter(private val products: List<Product>) : RecyclerView.Adapte
         holder.title.text = product.name
         val newPrice = product.price.toString()
         holder.price.text = "Ksh. $newPrice"
-        if (product.isOnSale){
+        if (product.isOnSale) {
             holder.saleImage.visibility = View.VISIBLE
         } else {
             holder.saleImage.visibility = View.GONE
+        }
+
+        //when user clicks
+
+        holder.image.setOnClickListener {
+            onClickProduct.invoke(product.name, product.image, product.price, holder.image)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row, parent, false)
-        val holder = ViewHolder(view)
-        view.setOnClickListener {
-            val intent = Intent(parent.context, ProductDetails::class.java)
-            intent.putExtra("title", products[holder.adapterPosition].name)
-            intent.putExtra("image", products[holder.adapterPosition].image)
-            intent.putExtra("price", products[holder.adapterPosition].price.toString())
-            parent.context.startActivity(intent)
-        }
-        return holder
+
+        return ViewHolder(view)
     }
 
     override fun getItemCount() = products.size
