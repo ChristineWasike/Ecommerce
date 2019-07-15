@@ -10,7 +10,9 @@
             android:id="@+id/appleImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_centerHorizontal="true"/>
+            android:transitionName="photoToAnimate"
+            android:layout_centerHorizontal="true"
+            tools:targetApi="lollipop"/>
 
     <ImageView
             android:id="@+id/saleImage"
