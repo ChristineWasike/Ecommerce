@@ -11,7 +11,6 @@
             android:id="@+id/productDetailsImage"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:src="@drawable/appleicecream"
             android:transitionName="photoToAnimate"
             android:layout_centerHorizontal="true"
             tools:targetApi="lollipop"
