@@ -12,10 +12,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.ProductDetails">
+
+        <activity
+                android:name=".ui.ProductDetails"
+                android:parentActivityName=".ui.MainActivity"
+                tools:targetApi="jelly_bean">
         </activity>
+
         <activity android:name=".ui.MainActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+                  android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
