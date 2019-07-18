@@ -106,8 +106,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        d("Cart", "Going to cart")
-        startActivity(Intent(this, CartActivity::class.java))
+        when (item.itemId){
+            R.id.actionCart ->{
+                d("Cart", "Going to cart")
+                startActivity(Intent(this, CartActivity::class.java))
+            }
+//            R.id.home -> {
+//                supportFinishAfterTransition()
+//            }
+
+        }
+
         return true
     }
 
