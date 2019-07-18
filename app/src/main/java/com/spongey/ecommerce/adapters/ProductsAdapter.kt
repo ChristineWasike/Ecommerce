@@ -33,7 +33,7 @@ class ProductsAdapter(
             holder.saleImage.visibility = View.GONE
         }
 
-        //when user clicks
+        //when user clicks on an image
 
         holder.image.setOnClickListener {
             onClickProduct.invoke(product.name, product.image, product.price, holder.image)
