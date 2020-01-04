@@ -9,25 +9,19 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.room.Room
 import com.google.android.material.navigation.NavigationView
 import com.spongey.ecommerce.ui.fragments.ApplesFragment
-import com.spongey.ecommerce.adapters.ProductsAdapter
 import com.spongey.ecommerce.R
 import com.spongey.ecommerce.cart.CartActivity
 import com.spongey.ecommerce.database.AppDatabase
 import com.spongey.ecommerce.database.CachedProduct
-import com.spongey.ecommerce.database.ProductDao
-import com.spongey.ecommerce.models.Product
 import com.spongey.ecommerce.ui.fragments.AdminFragment
 import com.spongey.ecommerce.ui.fragments.MainFragment
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.navigation_drawer.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import java.io.InputStream
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 

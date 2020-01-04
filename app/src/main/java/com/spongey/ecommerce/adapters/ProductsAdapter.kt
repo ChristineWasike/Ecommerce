@@ -1,7 +1,6 @@
 package com.spongey.ecommerce.adapters
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.spongey.ecommerce.R
 import com.spongey.ecommerce.adapters.ProductsAdapter.*
 import com.spongey.ecommerce.models.Product
-import com.spongey.ecommerce.ui.ProductDetails
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row.view.*
 
